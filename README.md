@@ -1,0 +1,2 @@
+# SpringMvcVelocity
+layout template
