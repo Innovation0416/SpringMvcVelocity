@@ -1,23 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/ssm/doRegister" method="post">
-		name:<input type="text" name="name" />
-		account:<input type="text" name="account" />
-		password:<input type="password" name="password" />
-		password:<input type="password" name="confirm" />
-		sex:<select name="sex">
-				<option value="1">male</option>
-				<option value="2">female</option>
-			</select>
-		birthday:<input type="date" name="birthday" />
-		mail:<input type="text" name="mail" />
-		<input id="loginBtn" class="ui submit button" value="Submit"
-							type="submit" />
-	</form>
+	<div class="ui five column grid" layout:fragment="content">
+		<div class="row"></div>
+		<div class="row">
+
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"
+				style="padding-top: 300px; padding-right: 50px; padding-left: 50px;">
+				<div class="ui inverted segment">
+					<form action="/ssm/doRegister" method="post" class="ui inverted form">
+						<div class="one field">
+							<div class="field">
+								<label>name</label><input type="text" name="name" />
+								<div class="field">
+									<label>account</label><input type="text" name="account" />
+								</div>
+							</div>
+							<div class="field">
+								<label>password</label><input type="password" name="password" />
+							</div>
+							<div class="field">
+								<label>password</label><input type="password" name="confirm" />
+							</div>
+							<div class="field">
+								<label>sex</label><select name="sex">
+									<option value="1">male</option>
+									<option value="2">female</option>
+								</select>
+							</div>
+							<div class="field">
+								<label>birthday</label><input type="date" name="birthday" />
+							</div>
+							<div class="field">
+								<label>mail</label><input type="text" name="mail" />
+							</div>
+							<input id="loginBtn" class="ui submit button" value="Submit"
+								type="submit" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="column"></div>
+			<div class="column"></div>
+		</div>
+	</div>
 </body>
 </html>
