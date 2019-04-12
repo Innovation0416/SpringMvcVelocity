@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="row">
+				<div class="top-menu">
+				
+					<div class="ui equal width grid">
+						<div class="equal width row">
+							<div class="column"><a class="nav" href="">About</a></div>
+							<div class="column"><img src="/img/logo.jpg" width="100" height="60" style="vertical-align:text-top;"></div>
+							<div class="column"><a class="nav" th:href="@{/ssm/logout}">Logout</a></div>
+						</div>
+					</div>
+					<!-- <ul>
+						<li>About</li><li><img src="/img/logo.jpg" width="100" height="60" style="vertical-align:text-top;"></li><li>Logout</li>
+					</ul> -->
+				</div>
+	
+
+			</div>
+			<div class="ui equal width grid">
+				<div class="equal width row">
+					<div class="column">
+						<div class="card-right">
+							<div class="ui special cards">
+								<div class="card">
+									<div class="blurring dimmable image">
+										<div class="ui dimmer">
+											<div class="content">
+												<div class="center">
+													<div class="ui inverted button">Add Friend</div>
+												</div>
+											</div>
+										</div>
+										<img th:src="${card.img_path}">
+									</div>
+									<div class="content">
+										<a class="header" th:text="${card.brand}">Team Fu</a>
+										<div class="meta">
+											<span class="date" th:text="${card.discription}">Created in Sep 2014</span>
+										</div>
+									</div>
+									<div class="extra content">
+										<a th:text="${card.category}"> <i class="users icon"></i> 2 Members
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="card-left"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+</script>
+</body>
+</html>
