@@ -13,7 +13,7 @@
     	WHERE ID = #{ID}
     </delete>
     
-    <select id="loginCheck" parameterType="User" resultType="user">
-    	SELECT * FROM user WHERE ID = #{id} AND PASSWORD = #{password}
+    <select id="loginCheck" parameterType="User" resultType="User">
+    	SELECT * FROM user WHERE ACCOUNT = #{account} AND PASSWORD = #{password}
     </select>
 </mapper>

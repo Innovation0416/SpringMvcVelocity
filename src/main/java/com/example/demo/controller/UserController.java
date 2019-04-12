@@ -22,10 +22,7 @@ public class UserController extends ViewDispather{
 	private UserService userService;
 
 	@RequestMapping("/loginCheck")
-	public ModelAndView loginCheck(HttpSession session, int id, String password) {
-		User loginUser = new User();
-		loginUser.setId(id);
-		loginUser.setPassword(password);
+	public ModelAndView loginCheck(HttpSession session, User loginUser) {
 		if (userService.loginCheck(loginUser)) {
 			session.setAttribute(SESSION_KEY, loginUser);
 			return new ModelAndView("redirect:/ssm/home");
