@@ -21,7 +21,7 @@ public class UserController extends ViewDispather{
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/loginCheck")
+	@RequestMapping("/doLoginCheck")
 	public ModelAndView loginCheck(HttpSession session, User loginUser) {
 		if (userService.loginCheck(loginUser)) {
 			session.setAttribute(SESSION_KEY, loginUser);

@@ -29,9 +29,8 @@ public class WebSecurityConfig  implements WebMvcConfigurer{
 		addInterceptor.excludePathPatterns("/ssm/layout/layout");
 		addInterceptor.excludePathPatterns("/ssm/error");
 		addInterceptor.excludePathPatterns("/ssm/login");
-		addInterceptor.excludePathPatterns("/ssm/login**");
 		addInterceptor.excludePathPatterns("/ssm/register");
-		addInterceptor.excludePathPatterns("/ssm/doRegister");
+		addInterceptor.excludePathPatterns("/ssm/do**");
 		addInterceptor.excludePathPatterns("/css/**");
 		addInterceptor.excludePathPatterns("/js/**");
 		addInterceptor.excludePathPatterns("/live2d/**");
