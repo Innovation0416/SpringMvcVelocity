@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
 	private String name;
 	private int id;
-	private Date birthday;
+	private String birthday;
 	private String mail;
 	private String password;
 	private short sex;
@@ -32,10 +32,10 @@ public class User {
 	public void setSex(short sex) {
 		this.sex = sex;
 	}
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 	public String getMail() {

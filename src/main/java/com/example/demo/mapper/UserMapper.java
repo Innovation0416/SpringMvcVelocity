@@ -13,4 +13,6 @@ public interface UserMapper {
 	public int delUser(int id);
 	
 	public List<User> loginCheck(User user);
+	
+	public boolean registerUser(User user);
 }

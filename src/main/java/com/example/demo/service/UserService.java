@@ -27,4 +27,7 @@ public class UserService {
 		return userMapper.loginCheck(user).size() > 0 ? true : false;
 	}	
 	
+	public boolean registerUser(User user) {
+		return userMapper.registerUser(user);
+	}
 }

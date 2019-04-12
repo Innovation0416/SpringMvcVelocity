@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/ssm/doRegister" method="post">
+		name:<input type="text" name="name" />
+		account:<input type="text" name="account" />
+		password:<input type="password" name="password" />
+		password:<input type="password" name="confirm" />
+		sex:<select name="sex">
+				<option value="1">male</option>
+				<option value="2">female</option>
+			</select>
+		birthday:<input type="date" name="birthday" />
+		mail:<input type="text" name="mail" />
+		<input id="loginBtn" class="ui submit button" value="Submit"
+							type="submit" />
+	</form>
+</body>
+</html>

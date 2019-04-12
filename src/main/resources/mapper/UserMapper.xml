@@ -14,6 +14,11 @@
     </delete>
     
     <select id="loginCheck" parameterType="User" resultType="User">
-    	SELECT * FROM user WHERE ACCOUNT = #{account} AND PASSWORD = #{password}
+    	SELECT * FROM user WHERE ACCOUNT = #{account} AND PASSWORD = md5(#{password})
     </select>
+    
+    <insert id="registerUser" parameterType="User">
+    	INSERT INTO USER (NAME,ACCOUNT,PASSWORD,SEX,MAIL,BIRTHDAY,REGISTER_DATE)
+    	VALUES (#{name},#{account},md5(#{password}),#{sex},#{mail},#{birthday},NOW())
+    </insert>
 </mapper>
