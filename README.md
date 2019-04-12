@@ -1,2 +1,2 @@
-# SpringMvcVelocity
-layout template
+# fashion-choice-advice
+web app made by springboot
