@@ -21,19 +21,18 @@ import com.example.demo.service.ClothesService;
 public class ClothesController {
 	
 	public final static String SESSION_KEY = "loginUserInfo";
-	
+
 	@Autowired
 	private ClothesService clothesService;
-	
+
 	@RequestMapping("/home")
 	public String setCard(ModelMap model) {
-		List <Clothes> clothesList = clothesService.findAll(); 
-		for (Clothes clothes:clothesList) {
-			model.addAttribute("card", clothes);
-		}	
+		List<Clothes> clothesList = clothesService.findAll();
+		model.addAttribute("card", clothesList);
+
 		return "home";
 	}
-	
+
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();

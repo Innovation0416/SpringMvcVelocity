@@ -6,64 +6,73 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<div layout:fragment="content">
-		<div class="container">
-			<div class="row">
-				<div class="top-menu">
-				
-					<div class="ui equal width grid">
-						<div class="equal width row">
-							<div class="column"><a class="nav" href="">About</a></div>
-							<div class="column"><img src="/img/logo.jpg" width="100" height="60" style="vertical-align:text-top;"></div>
-							<div class="column"><a class="nav" th:href="@{/ssm/logout}">Logout</a></div>
+	<div class="container" layout:fragment="content">
+
+		<div class="row">
+			<div class="top-menu">
+				<div class="ui equal width grid">
+					<div class="equal width row">
+						<div class="column">
+							<a class="nav" href="">About</a>
+						</div>
+						<div class="column">
+							<img src="/img/logo.jpg" width="100" height="60"
+								style="vertical-align: text-top;">
+						</div>
+						<div class="column">
+							<a class="nav" th:href="@{/ssm/logout}">Logout</a>
 						</div>
 					</div>
-					<!-- <ul>
+				</div>
+				<!-- <ul>
 						<li>About</li><li><img src="/img/logo.jpg" width="100" height="60" style="vertical-align:text-top;"></li><li>Logout</li>
 					</ul> -->
-				</div>
-	
-
 			</div>
-			<div class="ui equal width grid">
-				<div class="equal width row">
-					<div class="column">
-						<div class="card-right">
-							<div class="ui special cards">
-								<div class="card">
-									<div class="blurring dimmable image">
-										<div class="ui dimmer">
-											<div class="content">
-												<div class="center">
-													<div class="ui inverted button">Add Friend</div>
-												</div>
-											</div>
-										</div>
-										<img th:src="${card.img_path}">
-									</div>
-									<div class="content">
-										<a class="header" th:text="${card.brand}">Team Fu</a>
-										<div class="meta">
-											<span class="date" th:text="${card.discription}">Created in Sep 2014</span>
-										</div>
-									</div>
-									<div class="extra content">
-										<a th:text="${card.category}"> <i class="users icon"></i> 2 Members
-										</a>
+		</div>
+
+		<div class="row" style="padding-top:10px;padding-bottom: 20px;">
+			<div class="ui stackable container menu" style="background:sliver;">
+				<a class="item"
+					style="width: 33%; color:#1f1f1f;font-weight: bold;padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">Features</a>
+				<a class="item"
+					style="width: 34%; color:#1f1f1f;font-weight: bold;padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">Testimonials</a> 
+				<a class="item"
+					style="width: 33%; color:#1f1f1f;font-weight: bold;padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">Sign-in</a>
+			</div>
+		</div>
+
+		<div class="ui two column centered grid">
+			<div class="column">
+				<div class="ui three stackable cards">
+					<div class="card" th:each="product:${card}">
+						<div class="blurring dimmable image">
+							<div class="ui dimmer">
+								<div class="content">
+									<div class="center">
+										<div class="ui inverted button">Add Friend</div>
 									</div>
 								</div>
 							</div>
+							<img th:src="${product.img_path}">
 						</div>
-					</div>
-					<div class="column">
-						<div class="card-left"></div>
+						<div class="content">
+							<a class="header" th:text="${product.brand}">Team Fu</a>
+							<div class="meta">
+								<span class="date" th:text="${product.discription}"
+									style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;">Created
+									in Sep 2014</span>
+							</div>
+						</div>
+						<div class="extra content">
+							<a th:text="${product.category}"> <i class="users icon"></i>
+								2 Members
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<script>
-</script>
+	</div>
 </body>
 </html>

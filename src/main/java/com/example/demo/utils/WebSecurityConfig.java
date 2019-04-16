@@ -35,6 +35,7 @@ public class WebSecurityConfig  implements WebMvcConfigurer{
 		addInterceptor.excludePathPatterns("/js/**");
 		addInterceptor.excludePathPatterns("/live2d/**");
 		addInterceptor.excludePathPatterns("/img/**");
+		//addInterceptor.excludePathPatterns("/ssm/home");
 		//filter page
 		addInterceptor.addPathPatterns("/**");
 	}

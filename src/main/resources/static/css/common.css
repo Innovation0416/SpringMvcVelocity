@@ -37,3 +37,14 @@ a.nav:hover{
 	padding-left:60px;
 	padding-right:60px;
 }
+.card-display{
+	width:350px;
+	float: center;
+	padding-top:60px;
+	padding-left:60px;
+	padding-right:60px;
+	display:block;
+}
+.ul menu{
+	width:1500px !important;
+}
