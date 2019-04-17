@@ -12,14 +12,14 @@ import com.example.demo.mapper.ClothesMapper;
 public class ClothesService {
 	@Autowired
 	private ClothesMapper clothesMapper;
-	
-	public List<Clothes> findAll(int items) {
-		List<Clothes> list = clothesMapper.findAll(items);
+
+	public List<Clothes> findAll(int items, String category) {
+		List<Clothes> list = clothesMapper.findAll(items, category);
 		return list;
 	}
-	
-	public List<Clothes> findByCategory(String category){
-		List<Clothes> list = clothesMapper.findByCategory(category);
+
+	public List<Clothes> findByColums(String category) {
+		List<Clothes> list = clothesMapper.findByColums(category);
 		return list;
 	}
 }

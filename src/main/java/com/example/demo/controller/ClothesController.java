@@ -1,11 +1,7 @@
 package com.example.demo.controller;
 
-
-
-
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +17,7 @@ import com.example.demo.service.ClothesService;
 @Controller
 @RequestMapping(path = { "/ssm" })
 public class ClothesController {
-	
+
 	public final static String SESSION_KEY = "loginUserInfo";
 
 	@Autowired
@@ -29,9 +25,6 @@ public class ClothesController {
 
 	@RequestMapping("/home")
 	public String setCard(ModelMap model) {
-		List<Clothes> clothesList = clothesService.findAll(0);
-		model.addAttribute("card", clothesList);
-
 		return "home";
 	}
 
@@ -41,16 +34,11 @@ public class ClothesController {
 		return new ModelAndView("redirect:/ssm/login");
 	}
 
-	@RequestMapping("/doFindContents")
-	@ResponseBody
-	public List<Clothes> getItem(String category) {
-		List<Clothes> list = clothesService.findByCategory(category);
-		return list;		
-	}
-	
 	@RequestMapping("/doScroll")
 	@ResponseBody
-	public List<Clothes> getMoreItem(int items) {
-        return clothesService.findAll(items);
+	
+	public List<Clothes> getMoreItem(int items, String category) {
+		return clothesService.findAll(items, category);
 	}
+
 }
