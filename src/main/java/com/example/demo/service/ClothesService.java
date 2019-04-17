@@ -13,8 +13,13 @@ public class ClothesService {
 	@Autowired
 	private ClothesMapper clothesMapper;
 	
-	public List<Clothes> findAll() {
-		List<Clothes> list = clothesMapper.findAll();
+	public List<Clothes> findAll(int items) {
+		List<Clothes> list = clothesMapper.findAll(items);
+		return list;
+	}
+	
+	public List<Clothes> findByCategory(String category){
+		List<Clothes> list = clothesMapper.findByCategory(category);
 		return list;
 	}
 }
