@@ -7,14 +7,14 @@
         FROM CLOTHES
         WHERE
         <choose> 
-        <when test="category!=null">
+        <when test="category!=null and category!='news'">
         CATEGORY = #{category}
         </when>
         <otherwise>
-        <![CDATA[AND TO_DAYS(NOW())-TO_DAYS(RELEASE_DATE)=<30]]>
+        <![CDATA[TO_DAYS(NOW())-TO_DAYS(RELEASE_DATE)<30]]>
         </otherwise>
         </choose>
         LIMIT #{items}, 30
     </select>
-    
+    	
 </mapper>

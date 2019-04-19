@@ -1,5 +1,5 @@
 var startRowNo = 0;
-var category = "TEST";
+var category = 'news';
 
 $(function() {
 	 getData();

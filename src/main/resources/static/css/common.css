@@ -4,10 +4,11 @@ li{display:inline-block;}
 	height:100px;
 	padding-top:30px;
 	padding-left:30px;
-	padding-right:30px;
-	background:#1f1f1f;
-	text-align:center;
+	padding-right: 30px;
+	background: #1f1f1f;
+	text-align: center;	
 }
+
 a.nav{
 	line-height:60px;
 	font-size:18px;
