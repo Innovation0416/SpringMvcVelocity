@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.bean.Clothes;
-import com.example.demo.mapper.ClothesMapper;
+import com.example.demo.dao.ClothesMapper;
+import com.example.demo.entity.Clothes;
 
 @Service
 public class ClothesService {
@@ -14,12 +14,10 @@ public class ClothesService {
 	private ClothesMapper clothesMapper;
 
 	public List<Clothes> findAll(int items, String category) {
-		List<Clothes> list = clothesMapper.findAll(items, category);
-		return list;
+		return clothesMapper.findAll(items, category);
 	}
 
 	public List<Clothes> findByColums(String category) {
-		List<Clothes> list = clothesMapper.findByColums(category);
-		return list;
+		return clothesMapper.findByColums(category);
 	}
 }

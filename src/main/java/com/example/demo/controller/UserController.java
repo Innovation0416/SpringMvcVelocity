@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.action.ViewDispather;
-import com.example.demo.bean.User;
+import com.example.demo.entity.User;
+import com.example.demo.entry.ViewDispather;
 import com.example.demo.service.UserService;
 
 @Controller

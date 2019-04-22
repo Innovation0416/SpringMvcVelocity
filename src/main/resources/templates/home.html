@@ -3,14 +3,12 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/layout}">
 <head>
-<meta charset="UTF-8">
 <script th:src="@{/js/lazy-load.js}"></script>
 </head>
 <body>
 	<div class="container" layout:fragment="content">
 
-		<div class="row"
-			style="position: fixed; left: 0; top: 0; width: 100%; z-index: 2;">
+		
 			<div class="top-menu">
 				<div class="ui equal width grid">
 					<div class="equal width row">
@@ -26,46 +24,41 @@
 						</div>
 					</div>
 				</div>
-				<!-- <ul>
-						<li>About</li><li><img src="/img/logo.jpg" width="100" height="60" style="vertical-align:text-top;"></li><li>Logout</li>
-					</ul> -->
 			</div>
+
+
+		<div class="ui stackable container menu"
+			style="position: -webkit-sticky; position: sticky; top: 10px; border: 1px solid #ccc;width: 90%; text-align: center; font-size: 1.5em; background-color: rgba(255, 255, 255, 0.8); z-index: 2;">
+			<a href="javascript:;" onclick="changeCategory('news')" class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">news</a>
+			<a href="javascript:;" onclick="changeCategory('shirts')"
+				class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">shirts</a>
+			<a href="javascript:;" onclick="changeCategory('pants')" class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">pants</a>
+			<a href="javascript:;" onclick="changeCategory('T-shirts')"
+				class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">T-shirts</a>
+			<a href="javascript:;" onclick="changeCategory('jackets')"
+				class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">jackets</a>
+			<a href="javascript:;" onclick="changeCategory('hats')" class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">hats</a>
+			<a href="javascript:;" onclick="changeCategory('bags')" class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">bags</a>
+			<a href="javascript:;" onclick="changeCategory('accessories')"
+				class="item"
+				style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">accessories</a>
 		</div>
 
-		<div class="row"
-			style="padding-top: 10px; padding-bottom: 20px; position: fixed; left: 0; top: 90px; width: 100%; z-index: 2;">
-			<div class="ui stackable container menu"
-				style="background: sliver; width: 1500px;">
-				<a href="javascript:;" onclick="changeCategory('news')" class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">news</a>
-				<a href="javascript:;" onclick="changeCategory('shirts')"
-					class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">shirts</a>
-				<a href="javascript:;" onclick="changeCategory('pants')"
-					class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">pants</a>
-				<a href="javascript:;" onclick="changeCategory('T-shirts')"
-					class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">T-shirts</a>
-				<a href="javascript:;" onclick="changeCategory('jackets')"
-					class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">jackets</a>
-				<a href="javascript:;" onclick="changeCategory('hats')" class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">hats</a>
-				<a href="javascript:;" onclick="changeCategory('bags')" class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">bags</a>
-				<a href="javascript:;" onclick="changeCategory('accessories')"
-					class="item"
-					style="width: 12.5%; color: #1f1f1f; font-weight: bold; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;">accessories</a>
-			</div>
-		</div>
-		<div style="position: absolute; left: 0; top: 180px; width: 100%; z-index: 1;">
-			<div class="ui two column centered grid">
+
+
+		<div class="ui two column centered grid">
 				<div class="column">
 					<div class="ui three stackable cards" id="dataList"></div>
 				</div>
 			</div>
-		</div>
+			
 	</div>
 </body>
 

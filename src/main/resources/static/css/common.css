@@ -1,7 +1,6 @@
 ul,ol,li{ list-style:none; }
 li{display:inline-block;}
 .top-menu{
-	height:100px;
 	padding-top:30px;
 	padding-left:30px;
 	padding-right: 30px;
@@ -48,4 +47,7 @@ a.nav:hover{
 }
 .ul menu{
 	width:1500px !important;
+}
+.ui.fixed.sticky + p {
+  margin-top: 39px;
 }
