@@ -25,7 +25,7 @@ public class UserController extends ViewDispather{
 	public ModelAndView loginCheck(HttpSession session, User loginUser) {
 		if (userService.loginCheck(loginUser)) {
 			session.setAttribute(SESSION_KEY, loginUser);
-			return new ModelAndView("redirect:/ssm/home");
+			return new ModelAndView("redirect:/ssm/index");
 		}
 		return new ModelAndView("redirect:/ssm/error");
 	}
