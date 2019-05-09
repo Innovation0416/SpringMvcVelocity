@@ -14,7 +14,7 @@ public class Clothes {
 	public String discription;
 	public String price;
 	public String link;
-
+	public String price_off;
 	
 	
 	public int getId() {
@@ -147,14 +147,16 @@ public class Clothes {
 		this.link = link;
 	}
 
+	
 
-
-	@Override
-	public String toString() {
-		return "Clothes [id=" + id + ", size=" + size + ", release_date=" + release_date + ", sex=" + sex + ", brand="
-				+ brand + ", category=" + category + ", style=" + style + ", img_path=" + img_path + ", discription="
-				+ discription + "]";
+	public String getPrice_off() {
+		return price_off;
 	}
-	
-	
+
+
+
+	public void setPrice_off(String price_off) {
+		this.price_off = price_off;
+	}
+
 }

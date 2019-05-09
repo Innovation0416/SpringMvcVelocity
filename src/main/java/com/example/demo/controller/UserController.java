@@ -34,7 +34,7 @@ public class UserController extends ViewDispather{
 	public ModelAndView register(HttpSession session, User registerUser) {
 		if (userService.registerUser(registerUser)) {
 			session.setAttribute(SESSION_KEY, registerUser);
-			return new ModelAndView("redirect:/ssm/home");
+			return new ModelAndView("redirect:/ssm/index");
 		}
 		return new ModelAndView("redirect:/ssm/error");
 	}
