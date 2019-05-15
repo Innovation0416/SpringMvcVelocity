@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="no-js" xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/layout}">
 <head>
-<script th:src="@{/js/lazy-load.js}"></script>
-<script th:src="@{/js/sendRequest.js}"></script>
+	<script src="/js/side-bar.js"></script>
+	<script src="/js/shopping-card.js"></script>
 </head>
 <body>
-	<!-- load comment parts !-->
-	<div class="container" layout:fragment="content">
-
+	<div layout:fragment="content">
 		<div class="am-g">
 
 			<header class="am-topbar am-topbar-fixed-top"
@@ -22,118 +20,37 @@
 			</header>
 
 			<div data-am-widget="tabs" class="myAppTab am-tabs am-tabs-d2"
-				style="margin: 0; background-image: url(/img/timg.jpg);">
-				<ul class="am-tabs-nav am-cf">
-					<li id="men" onclick="changeSex(1)" class="am-active"><a href="[data-tab-panel-0]">MEN</a></li>
-					<li id="women" onclick="changeSex(2)" class=""><a href="[data-tab-panel-1]">WOMEN</a></li>
-				</ul>
+				style="margin: 0;">
+
 				<div class="am-tabs-bd">
 
-					<!-- MEN　page contents !-->
-					<div id="menPage" data-tab-panel-0 class="myAppTabPanel am-tab-panel am-active"
-						style="padding-bottom: 0; padding-top: 14em;">
-						<div data-am-widget="slider"
-							class="myAppSlider am-slider am-slider-a1"
-							data-am-slider='{"directionNav":false}'>
-							<ul class="am-slides">
-								<li><a th:href="@{/ssm/goDetailPage}"><img
-										src="/img/slide1.jpg"></a></li>
-								<li><img src="/img/slide2.jpg"></li>
-							</ul>
-						</div>
+					<div class="myAppTabPanel am-tab-panel am-active"
+						style="padding-bottom: 0;">
 
-						<div class="am-g" style="background: white;">
-							<div id="dataList"></div>
-						</div>
-
-						<div class="am-g" style="background: white;">
-							<table class="myAppTable">
-								<tbody>
-									<tr class="bottom-line">
-										<td class="side-line">Express delivery in 3 days</td>
-										<td>Free delivery from 90€</td>
-									</tr>
-									<tr>
-										<td class="side-line">Free returns within 14 days</td>
-										<td>100% secure payments</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div class="am-g" style="background: black;">
-							<div class="contact-us">
-								<div class="contact-title">CONTACT US</div>
-								<div class="am-u-sm-6">
-									<button style="width: 93%; display: block; margin: 0.5em auto"
-										type="button" class="am-btn am-btn-default am-radius">Call
-										us</button>
-								</div>
-								<div class="am-u-sm-6">
-									<button style="width: 93%; display: block; margin: 0.5em auto"
-										type="button" class="am-btn am-btn-default am-radius">Email
-										us</button>
-								</div>
-								<div class="contact-details">
-									<p>
-										Monday to Friday </br>030-164-4951
-									</p>
-								</div>
+						<div class="itemDetail">
+							<div th:text="${clothes.brand}+${clothes.category}"
+								class="item-title"></div>
+							<div class="itemImgBox" style="position: relative;">
+								<img th:src="${clothes.img_path}" width="100%" height="300px">
 							</div>
-							<div class="follow-us">
-								<div class="follow-title">FOLLOW US</div>
-								<ul class="follow-medias">
-									<li><a href="##" class="am-icon-btn am-icon-twitter"></a>
-									</li>
-									<li><a href="##" class="am-icon-btn am-icon-facebook"></a>
-									</li>
-									<li><a href="##" class="am-icon-btn am-icon-github"></a></li>
-									<li><a href="##" class="am-icon-btn am-icon-instagram"></a>
-									</li>
-								</ul>
-							</div>
-							<div class="options">
-								<ul class="myOtherLink" style="padding-left: 0;">
-									<li><span class="am-icon-user"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>MY
-										ACCOUNT<span class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-map-pin"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>&nbsp;STORES<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-star"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>WISHLIST<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-envelope"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>CONTACT
-										US<span class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li style="padding-left: 1em;">LANGUAGE:ENGLISH<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-								</ul>
+							<div th:text="${clothes.price}" style="margin-top: 0.5em;text-align: center;"></div>
+							<div class="am-form-group">
+								<select id="doc-select-1" style="width: 100%;height:2em;margin-top: 1em;">
+									<option value="option1">XS</option>
+									<option value="option2">S</option>
+									<option value="option3">M</option>
+									<option value="option3">L</option>
+									<option value="option3">XL</option>
+									<option value="option3">XXL</option>
+								</select> 
+								<span class="am-form-caret"></span>
 							</div>
 						</div>
+						<button type="button"
+							class="am-btn am-btn-default am-btn-block add-item"
+							style="background: black; color: white;">Add to cart
+						</button>
 
-					</div>
-
-					<!-- WOMEN　page contents !-->
-					<div id="womenPage" data-tab-panel-1 class="myAppTabPanel am-tab-panel"
-						style="padding-bottom: 0; padding-top: 14em;">
-						<div data-am-widget="slider"
-							class="myAppSlider am-slider am-slider-a1"
-							data-am-slider='{"directionNav":false}'>
-							<ul class="am-slides">
-								<li><img src="/img/slide1.jpg"></li>
-								<li><img src="/img/slide2.jpg"></li>
-							</ul>
-						</div>
-						
-						<div class="am-g" style="background: white;">
-							<div id="dataList2"></div>
-						</div>
 
 						<div class="am-g" style="background: white;">
 							<table class="myAppTable">
@@ -205,14 +122,20 @@
 								</ul>
 							</div>
 						</div>
+
 					</div>
 
 				</div>
+				
 			</div>
 
 
 			<ul class="amz-toolbar am-topbar-fixed-bottom"
 				id="amz-toolbar" style="right: 10px;">
+				<li style="display:block;text-align: right;padding-bottom:125px;">
+					<a href="#" class="am-icon-shopping-cart shopping-cart"></a>
+					<div class="counter"></div>
+				</li>
 				<li style="display:block;text-align: right;padding-bottom: 5px;"><a href="#top" title="back to top"
 					class="am-icon-btn am-icon-arrow-up am-active"
 					id="amz-go-top"></a>
@@ -224,36 +147,34 @@
 				</li>
 			</ul>
 
-
-
 		</div>
 
 		<div id="doc-oc-demo2" class="myAppOffcanvas am-offcanvas">
 			<div class="am-offcanvas-bar"
 				style="background: white; overflow: hidden;">
 				<ul class="myCategory">
-					<li onclick="changeCategory('news')">NEW IN<span
+					<li th:onclick="|sendCategory('news',${clothes.sex})|">NEW IN<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('shirts')">SHIRTS<span
+					<li th:onclick="|sendCategory('shirts',${clothes.sex})|">SHIRTS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('pants')">PANTS<span
+					<li th:onclick="|sendCategory('pants',${clothes.sex})|">PANTS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('T-shirts')">T-SHIRTS<span
+					<li th:onclick="|sendCategory('T-shirts',${clothes.sex})|">T-SHIRTS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('jackets')">JACKETS<span
+					<li th:onclick="|sendCategory('jackets',${clothes.sex})|">JACKETS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('hats')">HATS<span
+					<li th:onclick="|sendCategory('hats',${clothes.sex})|">HATS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('bags')">BAGS<span
+					<li th:onclick="|sendCategory('bags',${clothes.sex})|">BAGS<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
-					<li onclick="changeCategory('accessories')">ACCESSORIES<span
+					<li th:onclick="|sendCategory('accessories',${clothes.sex})|">ACCESSORIES<span
 						class="am-icon-angle-right"
 						style="float: right; padding-right: 0.5em;"></span></li>
 				</ul>
@@ -282,6 +203,7 @@
 					© Last Mockingbird </span>
 			</div>
 		</div>
+		
 	</div>
 </body>
 </html>

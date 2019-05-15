@@ -7,14 +7,25 @@
         FROM CLOTHES
         WHERE
         <choose> 
-        <when test="category!=null and category!='news'">
-        CATEGORY = #{category}
-        </when>
-        <otherwise>
-        <![CDATA[TO_DAYS(NOW())-TO_DAYS(RELEASE_DATE)<30]]>
-        </otherwise>
+	        <when test="category!=null and category!='news'">
+	        	CATEGORY = #{category}
+	        </when>
+	        <otherwise>
+	        	<![CDATA[TO_DAYS(NOW())-TO_DAYS(RELEASE_DATE)<30]]>
+	        </otherwise>
         </choose>
+       <if test="sex!=0">
+        	AND SEX = #{sex}
+       </if>
+
         LIMIT #{items}, 30
     </select>
-    	
+    
+    <select id="findById" resultType="clothes">
+        SELECT 
+        * 
+        FROM CLOTHES
+        WHERE
+        ID = #{id}
+    </select>	
 </mapper>

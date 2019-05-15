@@ -31,10 +31,14 @@ public class WebSecurityConfig  implements WebMvcConfigurer{
 		addInterceptor.excludePathPatterns("/ssm/login");
 		addInterceptor.excludePathPatterns("/ssm/register");
 		addInterceptor.excludePathPatterns("/ssm/do**");
+		addInterceptor.excludePathPatterns("/ssm/go**");
 		addInterceptor.excludePathPatterns("/ssm/index");
+		addInterceptor.excludePathPatterns("/ssm/itemDetails");
+		addInterceptor.excludePathPatterns("/ssm/style");
 		addInterceptor.excludePathPatterns("/css/**");
 		addInterceptor.excludePathPatterns("/js/**");
 		addInterceptor.excludePathPatterns("/img/**");
+		addInterceptor.excludePathPatterns("/fonts/**");
 		//addInterceptor.excludePathPatterns("/ssm/home");
 		//filter page
 		addInterceptor.addPathPatterns("/**");

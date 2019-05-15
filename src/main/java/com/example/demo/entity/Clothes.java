@@ -15,6 +15,7 @@ public class Clothes {
 	public String price;
 	public String link;
 	public String price_off;
+	public String stock;
 	
 	
 	public int getId() {
@@ -159,4 +160,17 @@ public class Clothes {
 		this.price_off = price_off;
 	}
 
+
+
+	public String getStock() {
+		return stock;
+	}
+
+
+
+	public void setStock(String stock) {
+		this.stock = stock;
+	}
+
+	
 }

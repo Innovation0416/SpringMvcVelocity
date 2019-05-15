@@ -9,7 +9,9 @@ import com.example.demo.entity.Clothes;
 
 @Mapper
 public interface ClothesMapper {
-	public List<Clothes> findAll(@Param("items")int items, @Param("category")String category);
+	public List<Clothes> findAll(@Param("items")int items, @Param("category")String category,@Param("sex")short sex);
 
 	public List<Clothes> findByColums(String category);
+	
+	public Clothes findById(String id);
 }
