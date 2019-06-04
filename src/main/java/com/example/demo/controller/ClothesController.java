@@ -52,8 +52,9 @@ public class ClothesController {
 	}
 	
 	@RequestMapping("/doSendItemToOrder")
-	public List<Clothes> setOrderItems(Clothes clothes) {
-		orderItems.add(clothes);
+	@ResponseBody
+	public List<Clothes> setOrderItems(HttpSession session,Clothes clothes) {
+		orderItems.add((Clothes) session.getAttribute("itemDetails"));
 		return orderItems;
 	}
 }
