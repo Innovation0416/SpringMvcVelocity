@@ -741,6 +741,7 @@ ul.follow-medias>li {
 }
 
 .subscripts {
+	z-index:2000;
 	position: absolute;
 	color: white;
 	font-size: 0.7em;
@@ -748,7 +749,6 @@ ul.follow-medias>li {
 	width: 16px;
 	height: 16px;
 	line-height: 16px;
-	left: 88%;
 	top: 1px;
 	text-align: center;
 	-webkit-border-radius: 24px;

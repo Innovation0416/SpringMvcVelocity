@@ -31,7 +31,7 @@
 							<div th:text="${clothes.brand}+${clothes.category}"
 								class="item-title"></div>
 							<div class="itemImgBox" style="position: relative;">
-							
+
 								<div data-am-widget="slider"
 									class="myAppSlider am-slider am-slider-a1 am-no-layout"
 									data-am-slider="{&quot;directionNav&quot;:false}">
@@ -46,14 +46,14 @@
 											<li
 												style="width: 353px; margin-right: 0px; float: left; display: block;"
 												class="" data-thumb-alt=""><img
-													th:src="${clothes.img_path}" draggable="false"></li>
+												th:src="${clothes.img_path}" draggable="false"></li>
 											<li data-thumb-alt="" class="am-active-slide"
 												style="width: 353px; margin-right: 0px; float: left; display: block;"><img
 												th:src="${clothes.img_path}" draggable="false"></li>
 											<li
 												style="width: 353px; margin-right: 0px; float: left; display: block;"
-												class="clone" aria-hidden="true"><img src="/img/slide1.jpg"
-													draggable="false"></li>
+												class="clone" aria-hidden="true"><img
+												src="/img/slide1.jpg" draggable="false"></li>
 										</ul>
 									</div>
 									<ol class="am-control-nav am-control-paging">
@@ -159,25 +159,18 @@
 			</div>
 
 
-			<ul class="amz-toolbar am-topbar-fixed-bottom" id="amz-toolbar"
-				style="right: 10px;">
-				<li
-					style="display: block; text-align: right; padding-bottom: 125px;">
-					<a href="#" class="am-icon-shopping-cart shopping-cart"></a>
-					<div class="counter"></div>
-				</li>
-				<li style="display: block; text-align: right; padding-bottom: 5px;"><a
-					href="#top" title="back to top"
+			<div class="amz-toolbar am-topbar-fixed-bottom" id="amz-toolbar" style="width:60px;left: 355px;">
+				<a href="#" class="am-icon-btn am-icon-shopping-cart shopping-cart" style="margin-bottom: 70px;"
+					id="myCart"></a>
+				<div class="counter"></div>
+				<a href="#top" title="back to top" style="margin-bottom: 10px;"
 					class="am-icon-btn am-icon-arrow-up am-active" id="amz-go-top"></a>
-				</li>
-				<li style="display: block; text-align: right; padding-bottom: 5px;"><a
-					href="#amz-offcanvas"
-					class="am-icon-btn am-icon-bars am-show-sm-only amz-sidebar-toggle am-fr"
+				<a href="#amz-offcanvas" style="margin-bottom: 10px;"
+					class="am-icon-btn am-icon-bars am-show-sm-only amz-sidebar-toggle"
 					id="side-bar"
 					data-am-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">left-bar</a>
-				</li>
-			</ul>
 
+			</div>
 		</div>
 
 		<div id="doc-oc-demo2" class="myAppOffcanvas am-offcanvas">
