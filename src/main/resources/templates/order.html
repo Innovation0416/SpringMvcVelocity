@@ -3,12 +3,11 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/layout}">
 <head>
-<script src="/js/shopping-card.js"></script>
+<script src="/js/side-bar.js"></script>
 </head>
 <body>
 	<div layout:fragment="content">
-		<div class="am-g">
-
+		<div class="am-g">		
 			<header class="am-topbar am-topbar-fixed-top"
 				style="background: white; z-index: 1092;">
 				<div class="am-container">
@@ -17,161 +16,17 @@
 					</div>
 				</div>
 			</header>
-
-			<div data-am-widget="tabs" class="myAppTab am-tabs am-tabs-d2"
-				style="margin: 0;">
-
-				<div class="am-tabs-bd">
-
-					<div class="myAppTabPanel am-tab-panel am-active"
-						style="padding-bottom: 0;">
-
-						<div class="itemDetail">
-							<div th:text="${clothes.brand}+${clothes.category}"
-								class="item-title"></div>
-							<div class="itemImgBox" style="position: relative;">
-
-								<div data-am-widget="slider"
-									class="myAppSlider am-slider am-slider-a1 am-no-layout"
-									data-am-slider="{&quot;directionNav&quot;:false}">
-
-									<div class="am-viewport"
-										style="overflow: hidden; position: relative;">
-										<ul class="am-slides"
-											style="width: 800%; transition-duration: 0s; transform: translate3d(-706px, 0px, 0px);">
-											<li class="clone" aria-hidden="true"
-												style="width: 353px; margin-right: 0px; float: left; display: block;"><img
-												th:src="${clothes.img_path}" draggable="false"></li>
-											<li
-												style="width: 353px; margin-right: 0px; float: left; display: block;"
-												class="" data-thumb-alt=""><img
-												th:src="${clothes.img_path}" draggable="false"></li>
-											<li data-thumb-alt="" class="am-active-slide"
-												style="width: 353px; margin-right: 0px; float: left; display: block;"><img
-												th:src="${clothes.img_path}" draggable="false"></li>
-											<li
-												style="width: 353px; margin-right: 0px; float: left; display: block;"
-												class="clone" aria-hidden="true"><img
-												src="/img/slide1.jpg" draggable="false"></li>
-										</ul>
-									</div>
-									<ol class="am-control-nav am-control-paging">
-										<li><a href="#" class="">1</a><i></i></li>
-										<li><a href="#" class="am-active">2</a><i></i></li>
-									</ol>
-								</div>
-							</div>
-							<div th:text="${clothes.price}"
-								style="margin-top: 0.5em; text-align: center;"></div>
-							<div class="am-form-group">
-								<select id="doc-select-1"
-									style="width: 100%; height: 2em; margin-top: 1em;">
-									<option value="option1">XS</option>
-									<option value="option2">S</option>
-									<option value="option3">M</option>
-									<option value="option3">L</option>
-									<option value="option3">XL</option>
-									<option value="option3">XXL</option>
-								</select> <span class="am-form-caret"></span>
-							</div>
-						</div>
-						<button type="button"
-							class="am-btn am-btn-default am-btn-block add-item"
-							style="background: black; color: white;">Add to cart</button>
-
-
-						<div class="am-g" style="background: white;">
-							<table class="myAppTable">
-								<tbody>
-									<tr class="bottom-line">
-										<td class="side-line">Express delivery in 3 days</td>
-										<td>Free delivery from 90€</td>
-									</tr>
-									<tr>
-										<td class="side-line">Free returns within 14 days</td>
-										<td>100% secure payments</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div class="am-g" style="background: black;">
-							<div class="contact-us">
-								<div class="contact-title">CONTACT US</div>
-								<div class="am-u-sm-6">
-									<button style="width: 93%; display: block; margin: 0.5em auto"
-										type="button" class="am-btn am-btn-default am-radius">Call
-										us</button>
-								</div>
-								<div class="am-u-sm-6">
-									<button style="width: 93%; display: block; margin: 0.5em auto"
-										type="button" class="am-btn am-btn-default am-radius">Email
-										us</button>
-								</div>
-								<div class="contact-details">
-									<p>
-										Monday to Friday </br>030-164-4951
-									</p>
-								</div>
-							</div>
-							<div class="follow-us">
-								<div class="follow-title">FOLLOW US</div>
-								<ul class="follow-medias">
-									<li><a href="##" class="am-icon-btn am-icon-twitter"></a>
-									</li>
-									<li><a href="##" class="am-icon-btn am-icon-facebook"></a>
-									</li>
-									<li><a href="##" class="am-icon-btn am-icon-github"></a></li>
-									<li><a href="##" class="am-icon-btn am-icon-instagram"></a>
-									</li>
-								</ul>
-							</div>
-							<div class="options">
-								<ul class="myOtherLink" style="padding-left: 0;">
-									<li><span class="am-icon-user"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>MY
-										ACCOUNT<span class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-map-pin"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>&nbsp;STORES<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-star"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>WISHLIST<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li><span class="am-icon-envelope"
-										style="padding-left: 1em; padding-right: 0.5em; color: #FFF;"></span>CONTACT
-										US<span class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-									<li style="padding-left: 1em;">LANGUAGE:ENGLISH<span
-										class="am-icon-angle-right"
-										style="float: right; padding-right: 0.5em; color: #FFF;"></span></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-
+			
 			<div class="amz-toolbar am-topbar-fixed-bottom" id="amz-toolbar" style="width:60px;left: 355px;">
-				<a href="/ssm/order" class="am-icon-btn am-icon-shopping-cart shopping-cart" style="margin-bottom: 70px;"
-					id="myCart"></a>
-				<div class="counter"></div>
 				<a href="#top" title="back to top" style="margin-bottom: 10px;"
 					class="am-icon-btn am-icon-arrow-up am-active" id="amz-go-top"></a>
 				<a href="#amz-offcanvas" style="margin-bottom: 10px;"
 					class="am-icon-btn am-icon-bars am-show-sm-only amz-sidebar-toggle"
 					id="side-bar"
 					data-am-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">left-bar</a>
-
-			</div>
+			</div>		
 		</div>
-
+		
 		<div id="doc-oc-demo2" class="myAppOffcanvas am-offcanvas">
 			<div class="am-offcanvas-bar"
 				style="background: white; overflow: hidden;">
@@ -226,7 +81,6 @@
 					© Last Mockingbird </span>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>
